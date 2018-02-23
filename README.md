@@ -59,7 +59,11 @@ field :posts, types[Types::PostType] do
 
 the <b>" types[Types::PostType]"</b> means you are not calling a conventional type as <b>types.String</b>, types.boolean, types.ID or any <b>pre-defined type </b> of GraphQL so you need to tell GraphQL what is this "PostType". If you are using ActiveRecord and PostGreSQL you can connect your model using:
 
-``` rails generate graphql:object Post
+```
+
+rails generate graphql:object Post
+
+
 ```
 
 It will create a post_type.rb object and inside /types/ there,  you can describe your model using fields:
