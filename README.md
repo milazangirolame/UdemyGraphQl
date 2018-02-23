@@ -9,7 +9,7 @@ First of all, let me say you will need to define all your schema, models and con
 Then:
 
 <b>1)</b>Add the gems:
-```#gemfile
+```gemfile
 
 gem 'graphql'
 gem 'graphiql-rails'
@@ -18,7 +18,10 @@ gem 'graphql-errors'
 ```
 
 <b>2)</b>install graphql using the command. It will create a folder <b>app/graphql</b>
-```rails generate graphql:install
+
+```
+rails generate graphql:install
+
 ```
 
 
@@ -33,7 +36,7 @@ For an example, I have my model Post and i want to query all my posts and see al
 
 the query will be:
 
-```js
+```json
 
 query {
   posts{
@@ -88,7 +91,8 @@ http://yourapp.com/graphiql or http://localhost:3000/graphiql
 
 make some queries to test!
 
-```js
+```json
+
 #discover how graphql draw your schema :
 
 query {
