@@ -20,6 +20,9 @@ gem 'graphiql-rails'
 gem 'graphql-errors'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+# faker for seeds
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -43,6 +46,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
 end
 
 group :development do
