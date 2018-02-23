@@ -9,7 +9,8 @@ First of all, let me say you will need to define all your schema, models and con
 Then:
 
 <b>1)</b>Add the gems:
-```
+```#gemfile
+
 gem 'graphql'
 gem 'graphiql-rails'
 gem 'graphql-errors'
@@ -32,7 +33,8 @@ For an example, I have my model Post and i want to query all my posts and see al
 
 the query will be:
 
-```
+```js
+
 query {
   posts{
     name
@@ -42,7 +44,8 @@ query {
 
 the query implementation in types/query_type.rb could be:
 
-```
+```#query_type.rb
+
 field :posts, types[Types::PostType] do
     resolve -> (obj, args, ctx) {
       Post.all
@@ -85,7 +88,8 @@ http://yourapp.com/graphiql or http://localhost:3000/graphiql
 
 make some queries to test!
 
-``` #discover how graphql draw your schema :
+```js
+#discover how graphql draw your schema :
 
 query {
  __type(name: "Post"){
@@ -124,7 +128,7 @@ query {
 
 
 
-# TODO: describe using arguments queries
+## TODO: describe using arguments queries
 
 Args is something you pass to your field, if your field is a custom object type as PostType, the args can be the id or any column of your post table
 ```#query_type.rb
@@ -137,6 +141,6 @@ field :users, Types::UserType do
   end
 ```
 
-#TODO: mutations and subscriptions
+## TODO: mutations and subscriptions
 
 .....i am gonna do this, please tell me if you apreciated it
