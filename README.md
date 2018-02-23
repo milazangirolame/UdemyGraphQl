@@ -138,5 +138,4 @@ field :users, Types::UserType do
 
 #TODO: mutations and subscriptions
 
-
-----have fun!
+.....i am gonna do this, please tell me if you apreciated it
