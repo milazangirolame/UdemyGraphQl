@@ -1,6 +1,6 @@
 # Building a simple GraphQL APP with Ruby on Rails
 
-##How to do it for dummies :)
+## How to do it for dummies :)
 
 Just some GraphQl easy setup
 
@@ -8,7 +8,7 @@ First of all, let me say you will need to define all your schema, models and con
 
 Then:
 
-1)Add the gems:
+<b>1)</b>Add the gems:
 ```
 gem 'graphql'
 gem 'graphiql-rails'
@@ -16,15 +16,15 @@ gem 'graphql-errors'
 
 ```
 
-2)install graphql using the command. It will create a folder <b>app/graphql</b>
+<b>2)</b>install graphql using the command. It will create a folder <b>app/graphql</b>
 ```rails generate graphql:install
 ```
 
 
-3) Access the folder and open /types/mutation_type.rb
+<b>3)</b> Access the folder and open /types/mutation_type.rb
 Comment the mutation line until you implement some mutations.
 
-4) Go to the types/query_type.rb
+<b>4)</b> Go to the types/query_type.rb
 
 Here is where you create your root queries. Root queries are queries you can call directly :
 
@@ -41,6 +41,7 @@ query {
 ```
 
 the query implementation in types/query_type.rb could be:
+
 ```
 field :posts, types[Types::PostType] do
     resolve -> (obj, args, ctx) {
@@ -55,7 +56,7 @@ the <b>" types[Types::PostType]"</b> means you are not calling a conventional ty
 ``` rails generate graphql:object Post
 ```
 
-It will create a post_type.rb object and inside /types/ there,  you can describe your model using fields :
+It will create a post_type.rb object and inside /types/ there,  you can describe your model using fields:
  ``` #post_type.rb
 
   field :id, types.ID
@@ -63,7 +64,7 @@ It will create a post_type.rb object and inside /types/ there,  you can describe
   field :body, types.String
 ```
 
----Do this to each model you have in your schema and modify each one !!!---
+## ---Do this to each model you have in your schema and modify each one !!!---
 
 
  If your model reference other model you just need to reference it ot as inside post_type.rb:
@@ -78,9 +79,9 @@ field :user, Types::UserType do
   ```
 
 
-5) Launch your server and open the url
+<b>5)</b> Launch your server and open the url
 
-yourapp.com/graphiql <b>or</b> localhost:3000/graphql
+http://yourapp.com/graphiql or http://localhost:3000/graphiql
 
 make some queries to test!
 
@@ -123,7 +124,7 @@ query {
 
 
 
-#TODO: describe using arguments queries
+# TODO: describe using arguments queries
 
 Args is something you pass to your field, if your field is a custom object type as PostType, the args can be the id or any column of your post table
 ```#query_type.rb
