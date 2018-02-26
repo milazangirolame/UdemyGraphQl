@@ -14,6 +14,23 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
+  field :users, types[Types::UserType] do
+    argument :id, types.ID
+    description "to see info about particular user"
+    resolve -> (obj, args, ctx) {
+      User.where(id: args[:id])
+    }
+  end
+
+  field :users, types[Types::UserType] do
+    argument :first_name, types.String
+    description "to see info about particular user"
+    resolve -> (obj, args, ctx) {
+      User.where(first_name: args[:first_name])
+    }
+  end
+
+
   field :comments, types[Types::CommentType] do
     resolve -> (obj, args, ctx) {
       Comment.all
