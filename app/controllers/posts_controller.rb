@@ -50,6 +50,11 @@ class PostsController < ApplicationController
     params.require(:post).permit(:name, :body, :user_id)
   end
 
-
+  def post_methods(field)
+    field.to_sym
+    define_method(:field) do |field|
+      post.field
+    end
+  end
 
 end

@@ -1,3 +1,4 @@
+
 class GraphqlController < ApplicationController
   def execute
     variables = ensure_hash(params[:variables])
@@ -30,4 +31,6 @@ class GraphqlController < ApplicationController
       raise ArgumentError, "Unexpected parameter: #{ambiguous_param}"
     end
   end
+
+
 end
