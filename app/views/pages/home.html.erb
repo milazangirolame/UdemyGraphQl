@@ -1,0 +1,21 @@
+<h1>Post List</h1>
+<p>not dinamyic yet</p>
+<div class="cards">
+  <%@fields.each do |field| %>
+    <div class="card-name">
+      <h3><%=field%></h3>
+      <% @posts.each do |post|%>
+        <p>
+          <% if post[:"#{field}"] == nil %>
+            <%= "campo não preenchido" %>
+          <%elsif%>
+            <% post[:"#{field}"].class.name == "Time" %>
+            <%= post[:"#{field}"].strftime('%d/%m/%Y') %>
+          <%else%>
+            <%= post[:"#{field}"]%>
+          <%end%>
+        </p>
+      <%end%>
+    </div>
+  <%end%>
+</div>
