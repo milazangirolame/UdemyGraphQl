@@ -5,5 +5,8 @@ class PagesController < ApplicationController
     @fields = Post.column_names
   end
 
+  def update
+
+  end
 
 end

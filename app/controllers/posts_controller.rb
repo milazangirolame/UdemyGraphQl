@@ -16,12 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @user = current_user
-    if @post.save
-      redirect_to current_user.posts
-    else
-      render :new
-    end
+
   end
 
   def edit
@@ -46,15 +41,14 @@ class PostsController < ApplicationController
 
   private
 
+  def date_pub
+    Post.find_by(params[:id]).created_at.to_date
+  end
+
   def post_params
     params.require(:post).permit(:name, :body, :user_id)
   end
 
-  def post_methods(field)
-    field.to_sym
-    define_method(:field) do |field|
-      post.field
-    end
-  end
+
 
 end

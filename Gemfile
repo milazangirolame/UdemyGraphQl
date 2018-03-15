@@ -18,8 +18,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'graphql'
 gem 'graphiql-rails'
 gem 'graphql-errors'
-#Use Oauth to auth requests
+#Use Oauth2 to auth requests
 gem 'oauth2'
+gem 'jwt'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

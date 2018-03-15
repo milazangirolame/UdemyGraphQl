@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 10.times do
+  User.create([{country: "#{Faker::Fallout.faction}"}, {postcode: "#{Faker::Address.zip_code}"}, {street: "#{Faker::Address.street_address}"}, {first_name:"#{Faker::HarryPotter.character}"}])
+end
+10.times do
   Post.create([{name: "#{Faker::Fallout.faction}"}, {body: "#{Faker::Hacker.say_something_smart}"}, {user_id:"#{rand(1..12)}"}])
 end
 10.times do
